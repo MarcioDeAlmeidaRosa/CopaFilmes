@@ -1,6 +1,8 @@
-﻿namespace CopaFilmesAPI.Model
+﻿using System;
+
+namespace CopaFilmesAPI.Model
 {
-    public class Filme
+    public class Filme: IComparable
     {
         public string ID { get; set; }
 
