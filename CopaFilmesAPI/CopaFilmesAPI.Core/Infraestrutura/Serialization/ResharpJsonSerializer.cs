@@ -4,7 +4,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using RestSharp.Serializers;
 
-namespace CopaFilmesAPI.Core.Commons.Serialization
+namespace CopaFilmesAPI.Core.Infraestrutura.Serialization
 {
     /// <summary>
     /// Responsável por Transformar objeto enviado ao RestSharp em JSON

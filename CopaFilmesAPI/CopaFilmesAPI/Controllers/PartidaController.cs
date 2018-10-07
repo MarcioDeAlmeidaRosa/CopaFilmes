@@ -1,38 +1,39 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Web.Http;
 using CopaFilmesAPI.Actions;
 using System.Threading.Tasks;
 
 namespace CopaFilmesAPI.Controllers
 {
     /// <summary>
-    /// Disponibiliza funcionalidades de filme
+    /// Responsável por executar partidas do campeonato
     /// </summary>
-    public class FilmeController : BaseController
+    public class PartidaController : BaseController
     {
         /// <summary>
         /// Variável para armazenar a instância da ação
         /// </summary>
-        private readonly FilmeActions _actions;
+        private readonly PartidaAction _actions;
 
         /// <summary>
         /// Inicializa uma instância da classe
         /// </summary>
-        public FilmeController()
+        public PartidaController()
         {
-            _actions = new FilmeActions();
+            _actions = new PartidaAction();
         }
 
         /// <summary>
-        /// Fornece lista de Filme para o cliente
+        /// Processa o campeonato conforme escolha dos filmes
         /// </summary>
-        /// <returns></returns>
-        public async Task<HttpResponseMessage> Get()
+        /// <returns>Retorna resultado conendo o campeão e o segundo colocado</returns>
+        public async Task<HttpResponseMessage> Post([FromBody]string[] filmesEscolhidos)
         {
             try
             {
-                return Request.CreateResponse(HttpStatusCode.OK, await _actions.Listar());
+                return Request.CreateResponse(HttpStatusCode.OK, await _actions.ProcessaCampeonato(filmesEscolhidos));
             }
             catch (Exception ex)
             {

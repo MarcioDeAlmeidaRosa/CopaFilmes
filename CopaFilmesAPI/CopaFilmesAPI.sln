@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.DAOTests", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.Core", "CopaFilmesAPI.Core\CopaFilmesAPI.Core.csproj", "{6143AEDB-5048-4020-B685-4B80228C474E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.Actions", "CopaFilmesAPI.Actions\CopaFilmesAPI.Actions.csproj", "{7DD815E3-7012-4531-BB2F-D1109E131F5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{6143AEDB-5048-4020-B685-4B80228C474E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6143AEDB-5048-4020-B685-4B80228C474E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6143AEDB-5048-4020-B685-4B80228C474E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD815E3-7012-4531-BB2F-D1109E131F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD815E3-7012-4531-BB2F-D1109E131F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD815E3-7012-4531-BB2F-D1109E131F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD815E3-7012-4531-BB2F-D1109E131F5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,11 +2,11 @@
 using RestSharp;
 using System.Net;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using CopaFilmesAPI.Core.Responses;
-using CopaFilmesAPI.Core.Commons.Serialization;
 using CopaFilmesAPI.Core.Infraestrutura.Extensions;
-using System.Threading.Tasks;
+using CopaFilmesAPI.Core.Infraestrutura.Serialization;
 
 namespace CopaFilmesAPI.Core.Web.Cliente
 {

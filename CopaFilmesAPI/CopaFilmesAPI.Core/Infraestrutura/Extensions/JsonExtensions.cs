@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using CopaFilmesAPI.Core.Responses;
-using CopaFilmesAPI.Core.Commons.Serialization;
+using CopaFilmesAPI.Core.Infraestrutura.Serialization;
 
 namespace CopaFilmesAPI.Core.Infraestrutura.Extensions
 {

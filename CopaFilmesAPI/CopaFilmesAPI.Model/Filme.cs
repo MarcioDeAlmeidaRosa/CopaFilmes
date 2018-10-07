@@ -18,7 +18,7 @@ namespace CopaFilmesAPI.Model
         public int Ano { get; set; }
 
         /// <summary>
-        /// Nota atribuída pelos críticos
+        /// Nota atribuída pelo público
         /// </summary>
         public double Nota { get; set; }
 

@@ -64,8 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commons\Serialization\NewtonsoftJsonConvert.cs" />
-    <Compile Include="Commons\Serialization\ResharpJsonSerializer.cs" />
+    <Compile Include="Infraestrutura\Serialization\ResharpJsonSerializer.cs" />
     <Compile Include="Exceptions\CopaFilmesAPIException.cs" />
     <Compile Include="Exceptions\CopaFilmesAPIValidationException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />

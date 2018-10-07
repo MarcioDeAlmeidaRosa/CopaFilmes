@@ -9,6 +9,9 @@ namespace CopaFilmesAPI.Core.Infraestrutura.Serialization
     /// </summary>
     public static class NewtonsoftJsonConvert
     {
+        /// <summary>
+        /// Armazena configurações para executar as conversões
+        /// </summary>
         public static readonly JsonSerializerSettings DefaultSettings;
 
         /// <summary>

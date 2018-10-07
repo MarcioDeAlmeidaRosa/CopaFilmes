@@ -88,6 +88,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\FilmeController.cs" />
+    <Compile Include="Controllers\PartidaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -104,13 +105,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\CopaFilmesAPI.Actions\CopaFilmesAPI.Actions.csproj">
+      <Project>{7dd815e3-7012-4531-bb2f-d1109e131f5e}</Project>
+      <Name>CopaFilmesAPI.Actions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CopaFilmesAPI.Core\CopaFilmesAPI.Core.csproj">
       <Project>{6143AEDB-5048-4020-B685-4B80228C474E}</Project>
       <Name>CopaFilmesAPI.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CopaFilmesAPI.DAO\CopaFilmesAPI.DAO.csproj">
-      <Project>{3c26561d-f033-47d8-8d53-22e2010c4dc4}</Project>
-      <Name>CopaFilmesAPI.DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\CopaFilmesAPI.Model\CopaFilmesAPI.Model.csproj">
       <Project>{4aa34661-8604-4182-b22a-cc8f581af003}</Project>
