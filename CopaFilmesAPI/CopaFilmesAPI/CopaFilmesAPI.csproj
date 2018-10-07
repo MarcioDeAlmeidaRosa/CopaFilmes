@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\CopaFilmesAPI.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -85,6 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FilmeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -99,10 +102,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\CopaFilmesAPI.Core\CopaFilmesAPI.Core.csproj">
+      <Project>{6143AEDB-5048-4020-B685-4B80228C474E}</Project>
+      <Name>CopaFilmesAPI.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CopaFilmesAPI.DAO\CopaFilmesAPI.DAO.csproj">
+      <Project>{3c26561d-f033-47d8-8d53-22e2010c4dc4}</Project>
+      <Name>CopaFilmesAPI.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CopaFilmesAPI.Model\CopaFilmesAPI.Model.csproj">
+      <Project>{4aa34661-8604-4182-b22a-cc8f581af003}</Project>
+      <Name>CopaFilmesAPI.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

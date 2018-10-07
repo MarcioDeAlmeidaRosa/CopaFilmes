@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CopaFilmesAPI.Model.Tests
 {
     /// <summary>
-    /// 
+    /// Classe de teste responsável por testar o metodo de comparação da classe de filme
     /// </summary>
     [TestClass()]
     public class FilmeTests

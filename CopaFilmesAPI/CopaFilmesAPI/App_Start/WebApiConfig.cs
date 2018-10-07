@@ -4,8 +4,15 @@ using Newtonsoft.Json.Serialization;
 
 namespace CopaFilmesAPI
 {
+    /// <summary>
+    /// Configuração para start da aplicação
+    /// </summary>
     public static class WebApiConfig
     {
+        /// <summary>
+        /// Responsável por registrar as rotas ao iniciar a aplicação
+        /// </summary>
+        /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
