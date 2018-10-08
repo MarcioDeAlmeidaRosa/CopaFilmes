@@ -31,9 +31,9 @@ namespace CopaFilmesAPI.Model
         {
             if (!(obj is Filme outroObj))
                 return -1;
-            var result = Nota.CompareTo(outroObj.Nota);
+            var result = outroObj.Nota.CompareTo(Nota);
             if (result == 0)
-                result = Titulo.CompareTo(outroObj.Titulo);
+                return Titulo.CompareTo(outroObj.Titulo);
             return result;
         }
     }

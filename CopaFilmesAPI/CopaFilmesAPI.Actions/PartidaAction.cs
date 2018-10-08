@@ -4,7 +4,7 @@ using CopaFilmesAPI.DAO;
 using CopaFilmesAPI.Model;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using CopaFilmesAPI.Core.Infraestrutura.Extensions;
+using CopaFilmesAPI.Model.Converts;
 
 namespace CopaFilmesAPI.Actions
 {
@@ -31,14 +31,15 @@ namespace CopaFilmesAPI.Actions
         /// </summary>
         /// <param name="filmesEscolhidos"></param>
         /// <returns>Apresentação do campeão e vice campeão</returns>
-        public async Task<IEnumerable<Filme>[]> ProcessaCampeonato(string[] filmesEscolhidos)
+        public async Task<IEnumerable<Filme>> ProcessaCampeonato(string[] filmesEscolhidos)
         {
             if ((filmesEscolhidos == null) || (filmesEscolhidos.Length != 8)) throw new System.Exception("TODO: QUANTIDADE SELECIONADA NÃO OK");
             var filmes = await _dao.Listar();
             filmes = filmes.Where(f => filmesEscolhidos.Contains(f.ID));
             return filmes
-                .MontarChaveamento(new Func<Filme, string>(f => f.Titulo))
-                .ExecutarEliminatoria();
+                .MontarChaveamentoInicial()
+                .ExecutarEliminatorias()
+                .ExecutaPartidaFinal();
         }
 
     }
