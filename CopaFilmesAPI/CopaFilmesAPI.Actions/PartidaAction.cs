@@ -36,8 +36,9 @@ namespace CopaFilmesAPI.Actions
             if ((filmesEscolhidos == null) || (filmesEscolhidos.Length != 8)) throw new System.Exception("TODO: QUANTIDADE SELECIONADA NÃO OK");
             var filmes = await _dao.Listar();
             filmes = filmes.Where(f => filmesEscolhidos.Contains(f.ID));
-            var pares = filmes.MontarChaveamento(new Func<Filme, string>(f => f.Titulo));
-            return pares;
+            return filmes
+                .MontarChaveamento(new Func<Filme, string>(f => f.Titulo))
+                .ExecutarEliminatoria();
         }
 
     }

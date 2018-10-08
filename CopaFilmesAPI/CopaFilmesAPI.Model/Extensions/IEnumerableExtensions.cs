@@ -34,5 +34,12 @@ namespace CopaFilmesAPI.Core.Infraestrutura.Extensions
             }
             return result.ToArray();
         }
+
+
+        public static IEnumerable<TSource>[] ExecutarEliminatoria<TSource>(this IEnumerable<TSource>[] list)
+        {
+            //var _list = list.Select(l => l.ToList().Sort());
+            return list;
+        }
     }
 }
