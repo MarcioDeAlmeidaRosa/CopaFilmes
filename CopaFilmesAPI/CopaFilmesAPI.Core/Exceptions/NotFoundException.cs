@@ -10,16 +10,16 @@ namespace CopaFilmesAPI.Core.Exceptions
         /// <summary>
         /// Armazena os erros que serão lançados
         /// </summary>
-        public NotFoundException(string message) : base(message)
+        public NotFoundException(string mensagem) : base(mensagem)
         {
         }
 
         /// <summary>
         /// Armazena os erros que serão lançados
         /// </summary>
-        /// <param name="message">Mensagem de erro</param>
-        /// <param name="innerException">Erro vinculado</param>
-        public NotFoundException(string message, Exception innerException) : base(message, innerException)
+        /// <param name="mensagem">Mensagem de erro</param>
+        /// <param name="excecaoInterna">Erro original que gerou a exception</param>
+        public NotFoundException(string mensagem, Exception excecaoInterna) : base(mensagem, excecaoInterna)
         {
         }
     }

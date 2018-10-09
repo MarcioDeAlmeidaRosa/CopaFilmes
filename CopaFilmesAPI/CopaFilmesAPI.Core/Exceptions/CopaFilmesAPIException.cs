@@ -13,28 +13,28 @@ namespace CopaFilmesAPI.Core.Exceptions
         /// <summary>
         /// Armazena os erros que serão lançados
         /// </summary>
-        private readonly IEnumerable<string> _errors;
+        private readonly IEnumerable<string> _erros;
 
         /// <summary>
         /// Retornar os erros que serão lançados
         /// </summary>
-        public IEnumerable<string> Errors => _errors.ToList();
+        public IEnumerable<string> Erros => _erros.ToList();
 
         /// <summary>
         /// Inicializa uma instância da classe
         /// </summary>
-        /// <param name="message">Mensagem de erro</param>
-        public CopaFilmesAPIException(string message) : base(message)
+        /// <param name="mensagem">Mensagem de erro</param>
+        public CopaFilmesAPIException(string mensagem) : base(mensagem)
         {
         }
 
         /// <summary>
         /// Inicializa uma instância da classe
         /// </summary>
-        /// <param name="errors">Lista de mensagem de erro</param>
-        public CopaFilmesAPIException(IEnumerable<string> errors) : base(errors.AsErrorMessage())
+        /// <param name="erros">Mensagem de erro</param>
+        public CopaFilmesAPIException(IEnumerable<string> erros) : base(erros.AsErrorMessage())
         {
-            _errors = errors;
+            _erros = erros;
         }
     }
 }

@@ -27,14 +27,14 @@ namespace CopaFilmesAPI.Controllers
             {
                 typeof(CopaFilmesAPIValidationException), exception => new
                 {
-                    ((CopaFilmesAPIException)exception).Errors,
+                    ((CopaFilmesAPIException)exception).Erros,
                     HttpStatusCode = HttpStatusCode.BadRequest
                 }
             },
             {
                 typeof(CopaFilmesAPIException), exception => new
                 {
-                    ((CopaFilmesAPIException)exception).Errors,
+                    ((CopaFilmesAPIException)exception).Erros,
                     HttpStatusCode = HttpStatusCode.BadRequest
                 }
             }
@@ -43,12 +43,12 @@ namespace CopaFilmesAPI.Controllers
         /// <summary>
         /// Tratamento de erro genérico para os controles da API
         /// </summary>
-        /// <param name="ex"></param>
-        /// <returns></returns>
+        /// <param name="ex">Exception gerado pela aplicação</param>
+        /// <returns>Retorna erro para o cliente</returns>
         protected HttpResponseMessage InternalErro(Exception ex)
         {
             var typeException = ex.GetType();
-            if (!_mappedException.ContainsKey(typeException)) return Request.CreateResponse(HttpStatusCode.InternalServerError, new HttpError("Erro interno do servidor"));
+            if (!_mappedException.ContainsKey(typeException)) return Request.CreateResponse(HttpStatusCode.InternalServerError, new HttpError(ex.Message));
             var mappedException = _mappedException[typeException](ex);
             return Request.CreateResponse((HttpStatusCode)mappedException.HttpStatusCode, new HttpError(mappedException.Errors));
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using CopaFilmesAPI.DAO;
 using CopaFilmesAPI.Model;
 using System.Threading.Tasks;
@@ -30,13 +29,12 @@ namespace CopaFilmesAPI.Actions
         /// Executa a partida para retornar o campeão e o vice
         /// </summary>
         /// <param name="filmesEscolhidos"></param>
-        /// <returns>Apresentação do campeão e vice campeão</returns>
+        /// <returns>Lista de Filme contendo o campeão e vice campeão</returns>
         public async Task<IEnumerable<Filme>> ProcessaCampeonato(string[] filmesEscolhidos)
         {
-            if ((filmesEscolhidos == null) || (filmesEscolhidos.Length != 8)) throw new System.Exception("TODO: QUANTIDADE SELECIONADA NÃO OK");
             var filmes = await _dao.Listar();
-            filmes = filmes.Where(f => filmesEscolhidos.Contains(f.ID));
             return filmes
+                .Where(f => filmesEscolhidos.Contains(f.ID))
                 .MontarChaveamentoInicial()
                 .ExecutarEliminatorias()
                 .ExecutaPartidaFinal();
