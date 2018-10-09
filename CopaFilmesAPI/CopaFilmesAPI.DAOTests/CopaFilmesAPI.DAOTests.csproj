@@ -68,6 +68,10 @@
       <Project>{3C26561D-F033-47D8-8D53-22E2010C4DC4}</Project>
       <Name>CopaFilmesAPI.DAO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CopaFilmesAPI.Model\CopaFilmesAPI.Model.csproj">
+      <Project>{4AA34661-8604-4182-B22A-CC8F581AF003}</Project>
+      <Name>CopaFilmesAPI.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
