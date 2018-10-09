@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI", "CopaFilmesAPI\CopaFilmesAPI.csproj", "{BBB9AC8F-DAE9-42A8-9469-E7CD0A188614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.Tests", "CopaFilmesAPI.Tests\CopaFilmesAPI.Tests.csproj", "{09FBEAD1-10FD-4F75-A381-0A1770EF3DF8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.Model", "CopaFilmesAPI.Model\CopaFilmesAPI.Model.csproj", "{4AA34661-8604-4182-B22A-CC8F581AF003}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.ModelTests", "CopaFilmesAPI.ModelTests\CopaFilmesAPI.ModelTests.csproj", "{CB0F4022-6C96-41F4-A7BF-3934CD8013A8}"
@@ -21,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.Actions", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.ActionsTests", "CopaFilmesAPI.ActionsTests\CopaFilmesAPI.ActionsTests.csproj", "{CD8A438D-4815-4E56-91CC-52617A584772}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmesAPI.CoreTests", "CopaFilmesAPI.CoreTests\CopaFilmesAPI.CoreTests.csproj", "{915740FE-679D-4D32-AB27-628380CDA450}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,10 +31,6 @@ Global
 		{BBB9AC8F-DAE9-42A8-9469-E7CD0A188614}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBB9AC8F-DAE9-42A8-9469-E7CD0A188614}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBB9AC8F-DAE9-42A8-9469-E7CD0A188614}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09FBEAD1-10FD-4F75-A381-0A1770EF3DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09FBEAD1-10FD-4F75-A381-0A1770EF3DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09FBEAD1-10FD-4F75-A381-0A1770EF3DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09FBEAD1-10FD-4F75-A381-0A1770EF3DF8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AA34661-8604-4182-B22A-CC8F581AF003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AA34661-8604-4182-B22A-CC8F581AF003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AA34661-8604-4182-B22A-CC8F581AF003}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +59,10 @@ Global
 		{CD8A438D-4815-4E56-91CC-52617A584772}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8A438D-4815-4E56-91CC-52617A584772}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD8A438D-4815-4E56-91CC-52617A584772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915740FE-679D-4D32-AB27-628380CDA450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915740FE-679D-4D32-AB27-628380CDA450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915740FE-679D-4D32-AB27-628380CDA450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915740FE-679D-4D32-AB27-628380CDA450}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

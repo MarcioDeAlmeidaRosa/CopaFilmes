@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD8A438D-4815-4E56-91CC-52617A584772}</ProjectGuid>
+    <ProjectGuid>{915740FE-679D-4D32-AB27-628380CDA450}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CopaFilmesAPI.ActionsTests</RootNamespace>
-    <AssemblyName>CopaFilmesAPI.ActionsTests</AssemblyName>
+    <RootNamespace>CopaFilmesAPI.CoreTests</RootNamespace>
+    <AssemblyName>CopaFilmesAPI.CoreTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -29,7 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\CopaFilmesAPI.ActionsTests.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\CopaFilmesAPI.CoreTests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,26 +57,16 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="FilmeActionsTests.cs" />
-    <Compile Include="PartidaActionTests.cs" />
+    <Compile Include="Exceptions\CopaFilmesAPIExceptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CopaFilmesAPI.Actions\CopaFilmesAPI.Actions.csproj">
-      <Project>{7DD815E3-7012-4531-BB2F-D1109E131F5E}</Project>
-      <Name>CopaFilmesAPI.Actions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CopaFilmesAPI.Core\CopaFilmesAPI.Core.csproj">
       <Project>{6143AEDB-5048-4020-B685-4B80228C474E}</Project>
       <Name>CopaFilmesAPI.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CopaFilmesAPI.Model\CopaFilmesAPI.Model.csproj">
-      <Project>{4AA34661-8604-4182-B22A-CC8F581AF003}</Project>
-      <Name>CopaFilmesAPI.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
