@@ -39,6 +39,5 @@ namespace CopaFilmesAPI.Actions
                 .ExecutarEliminatorias()
                 .ExecutaPartidaFinal();
         }
-
     }
 }

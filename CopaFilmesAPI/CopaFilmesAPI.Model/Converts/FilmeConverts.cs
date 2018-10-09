@@ -79,7 +79,6 @@ namespace CopaFilmesAPI.Model.Converts
             return filmes.ExecutaPartidaFinal().ToArray()[0];
         }
 
-
         /// <summary>
         /// Executa partida final do campeonato
         /// </summary>
