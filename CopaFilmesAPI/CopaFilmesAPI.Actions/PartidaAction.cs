@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using CopaFilmesAPI.DAO;
 using CopaFilmesAPI.Model;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace CopaFilmesAPI.Actions
         /// <returns>Lista de Filme contendo o campeão e vice campeão</returns>
         public async Task<IEnumerable<Filme>> ProcessaCampeonato(string[] filmesEscolhidos)
         {
+            if (filmesEscolhidos == null) throw new ArgumentNullException("Escolha de filme para o campeonato não informada.", nameof(filmesEscolhidos));
             var filmes = await _dao.Listar();
             return filmes
                 .Where(f => filmesEscolhidos.Contains(f.ID))

@@ -69,6 +69,10 @@
       <Project>{7DD815E3-7012-4531-BB2F-D1109E131F5E}</Project>
       <Name>CopaFilmesAPI.Actions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CopaFilmesAPI.Core\CopaFilmesAPI.Core.csproj">
+      <Project>{6143AEDB-5048-4020-B685-4B80228C474E}</Project>
+      <Name>CopaFilmesAPI.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CopaFilmesAPI.Model\CopaFilmesAPI.Model.csproj">
       <Project>{4AA34661-8604-4182-B22A-CC8F581AF003}</Project>
       <Name>CopaFilmesAPI.Model</Name>
