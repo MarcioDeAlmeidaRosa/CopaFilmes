@@ -1,14 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
-import { ComandoComponent } from './components/comandos/comando.component';
-import { ListasComponent } from './components/listas/listas.component';
-import { FilmeDisputaComponent } from './components/listas/filme-disputa/filme-disputa.component';
-import { FilmeVencedorComponent } from './components/listas/filme-vencedor/filme-vencedor.component';
+
+
+import {
+  CabecalhoComponent,
+  ComandoComponent,
+  ListasComponent,
+  FilmeDisputaComponent,
+  FilmeVencedorComponent
+} from './components/';
+
+import { AppRoutingModule } from './app-routing';
+
+import { 
+  PartidaComponent ,
+  P404Component
+} from './views';
+import { ResultadoComponent } from './views/partida/resultado/resultado.component';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports:[
+
+  ],
+  providers: [
+
+  ],
   declarations: [
     AppComponent,
     CabecalhoComponent,
@@ -16,11 +39,10 @@ import { FilmeVencedorComponent } from './components/listas/filme-vencedor/filme
     ListasComponent,
     FilmeDisputaComponent,
     FilmeVencedorComponent,
+    PartidaComponent,
+    P404Component,
+    ResultadoComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

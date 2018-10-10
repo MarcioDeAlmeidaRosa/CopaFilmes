@@ -1,0 +1,1 @@
+export * from './filme-vencedor.component';
