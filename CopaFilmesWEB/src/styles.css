@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+    font-size: 1en;
+}
+
+.app {
+    background: #a8a8a8;
+    position: absolute;
+    margin: 0px 0px;
+    padding: 60px 80px 60px 80px !important;
+}
+
+.main_components {
+    margin: 0 auto;
+    border: 1px solid;
+}
+
+
+/* componentes cabeçalho */
+
+.cabecalho {
+    text-align: center;
+    background: #6E6E6E;
+    padding: 60px 0px;
+}
+
+.nome_campeonato {
+    color: #A6A6A6;
+    text-transform: uppercase;
+    font-size: 80%;
+}
+
+.status_campeonato {
+    color: #FFFFFF;
+    font-size: 200%;
+}
+
+.separacao {
+    width: 20px;
+    position: relative;
+    margin: 0 auto;
+    border-color: #FFFFFF;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.orientacao_campeonato {
+    color: #F4F4F4;
+    max-width: 610px;
+    position: relative;
+    margin: 0 auto;
+    font-size: 100%;
+}
+
+
+/* final compenentes cabeçalho */
+
+
+/* componentes comandos */
+
+.comandos {
+    padding: 17px 0px 0px 17px;
+}
+
+.filmes_selecionados {
+    float: left;
+    color: #EDEDED;
+    font-weight: bold;
+    text-align: left;
+    font-size: 120%;
+}
+
+.gerar_campeonato {
+    float: right;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #343434;
+    border-color: #343434;
+    color: #FFFFFF;
+    padding: 10px 40px;
+    box-sizing: border-box;
+}
+
+.remove_padding_direito {
+    padding-right: 0 !important;
+}
+
+
+/* final componentes comandos */
+
+
+/* componente filme disputa */
+
+.filme_disputa {
+    background: #FFFFFF;
+    height: 80px;
+    padding: 0px 0px;
+    border: 5px solid #a8a8a8;
+}
+
+
+/* final componentes filme disputa */
+
+
+/* componente filme campeão */
+
+.filme_campeao {
+    /* margin: 1px; */
+}
+
+
+/* final componentes filme campeão */
+
+.clear_fix {
+    clear: both;
+}
