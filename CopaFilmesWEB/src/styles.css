@@ -13,7 +13,6 @@ html {
 
 .main_components {
     margin: 0 auto;
-    border: 1px solid;
 }
 
 
@@ -106,7 +105,22 @@ html {
 /* componente filme campeão */
 
 .filme_campeao {
-    /* margin: 1px; */
+    height: 100px;
+    padding-bottom: 10px;
+}
+
+.filme_campeao_posicao {
+    background: #6E6E6E;
+    color: #FFFFFF;
+    font-size: 300%;
+    display: flex;
+    align-items: center;
+}
+
+.filme_campeao_titulo {
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 200%;
 }
 
 
