@@ -4,12 +4,14 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Collections.Generic;
 using CopaFilmesAPI.Core.Exceptions;
+using System.Web.Http.Cors;
 
 namespace CopaFilmesAPI.Controllers
 {
     /// <summary>
     /// Responsável por disponibilizar comportamentos genéricos para as demais classes controle da API
     /// </summary>
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public abstract class BaseController : ApiController
     {
         /// <summary>

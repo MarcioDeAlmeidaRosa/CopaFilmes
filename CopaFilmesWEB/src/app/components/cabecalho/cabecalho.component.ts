@@ -1,6 +1,4 @@
 import { Input, Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-cabecalho',

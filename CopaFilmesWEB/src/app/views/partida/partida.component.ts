@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ClickEventHelper } from 'src/app/helpers/click-event.helper';
 import { FilmesService } from 'src/app/services';
+import { FilmeModel } from 'src/app/models';
 
 @Component({
   selector: 'app-partida',
@@ -9,6 +10,7 @@ import { FilmesService } from 'src/app/services';
   styleUrls: ['./partida.component.css']
 })
 export class PartidaComponent implements OnInit {
+  listaFilmesSelecao: FilmeModel[];
 
   constructor(
     private clickEventHelper: ClickEventHelper,
@@ -16,18 +18,23 @@ export class PartidaComponent implements OnInit {
   ) { }
 
   consultaFilmes() {
-    this.serviceFilme.listarFilmes().subscribe(
-      res => {
-        // this.roleList.forEach((element, index) => {
-        //   this.roleList[index].name = res.Permissions[element.id];
-        // });
-        console.log(res);
+    // TODO:COLOCAR TRATAMENTO DE AGUARDE
+    this.serviceFilme.listarFilmes()
+    .subscribe(
+      filmes => {
+        this.listaFilmesSelecao = filmes as FilmeModel[];
+        this.listaFilmesSelecao.forEach(i => i.selecionado = false);
       }
     );
   }
 
+  gerarMeuCampeonato() {
+
+  }
+
   ngOnInit() {
-    this.clickEventHelper.events$.forEach(event => this.consultaFilmes());
+    this.clickEventHelper.events$.forEach(event => this.gerarMeuCampeonato());
+    this.consultaFilmes();
   }
 
 }

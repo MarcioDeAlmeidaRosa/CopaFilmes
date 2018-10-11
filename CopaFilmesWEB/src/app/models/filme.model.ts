@@ -3,4 +3,5 @@ export class FilmeModel {
     titulo: string;
     ano: string;
     nota: string;
+    selecionado: boolean;
   }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Constants } from '../app.constants';
+import { FilmeModel } from '../models';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class FilmesService {
@@ -16,6 +18,7 @@ export class FilmesService {
     return this.http.get(this.urlListaFilme, {responseType: 'json'});
   }
 
+ 
   iniciarPartida(body: string[]) {
     return this.http.post(this.urlIniciarPartida, body, {responseType: 'json'});
   }
