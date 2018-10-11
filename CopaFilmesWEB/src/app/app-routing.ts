@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { 
-  PartidaComponent, 
-  ResultadoComponent 
-} from './views/partida';
-
-import { 
-  P404Component, 
-} from './views/p404';
-
 const routes: Routes = [
-  { path: 'partida', component: PartidaComponent },
-  { path: 'partida/resultado', component: ResultadoComponent },
-  { path: '', redirectTo: '/partida', pathMatch: 'full' },
   {
-    path: '**', component: P404Component
+    path: '',
+    redirectTo: '/partida',
+    pathMatch: 'full',
+  },
+  {
+    path: '' ,
+    children: [
+      {
+        path: '',
+        loadChildren: './views/partida/partida.module#PartidaModule',
+      }
+    ],
+  },
+  {
+    path: '**', 
+    loadChildren: './views/p404/p404.module#P404Module',
   }
 ];
 

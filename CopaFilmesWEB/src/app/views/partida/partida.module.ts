@@ -1,22 +1,33 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import {
-   PartidaComponent, 
-   ResultadoComponent 
-} from '.';
+import { PartidaRoutingModule } from './partida-routing.module';
+import { CabecalhoModule } from 'src/app/components/cabecalho/cabecalho.module';
+import { ComandosModule } from 'src/app/components/comandos/comandos.module';
+import { ListasModule } from 'src/app/components/listas/listas.module';
 
-export const PartidaModule: Routes = [
-  {
-    path: '',
-    children: [
-      {
-        path: 'partida',
-        component: PartidaComponent
-      },
-      {
-        path: 'partida/resultado',
-        component: ResultadoComponent
-      },
-    ]
-  }
-];
+import { PartidaComponent } from './partida.component';
+import { ResultadoComponent } from './resultado/resultado.component';
+
+@NgModule({
+  imports: [
+    PartidaRoutingModule,
+    CommonModule,
+    ReactiveFormsModule,
+    TranslateModule,
+    CabecalhoModule,
+    ComandosModule,
+    ListasModule,
+  ],
+  declarations: [
+    PartidaComponent,
+    ResultadoComponent,
+  ],
+  exports: [
+    PartidaComponent,
+    ResultadoComponent,
+  ]
+})
+export class PartidaModule { }

@@ -1,47 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
-
-import {
-  CabecalhoComponent,
-  ComandoComponent,
-  ListasComponent,
-  FilmeDisputaComponent,
-  FilmeVencedorComponent
-} from './components/';
-
 import { AppRoutingModule } from './app-routing';
 
-import { 
-  PartidaComponent ,
-  P404Component
-} from './views';
-import { ResultadoComponent } from './views/partida/resultado/resultado.component';
-
 @NgModule({
+  declarations: [
+    AppComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  exports:[
-
+    // ReactiveFormsModule,
+    // HttpClientModule,
+    // FormsModule,
   ],
   providers: [
 
-  ],
-  declarations: [
-    AppComponent,
-    CabecalhoComponent,
-    ComandoComponent,
-    ListasComponent,
-    FilmeDisputaComponent,
-    FilmeVencedorComponent,
-    PartidaComponent,
-    P404Component,
-    ResultadoComponent,
   ],
   bootstrap: [AppComponent]
 })

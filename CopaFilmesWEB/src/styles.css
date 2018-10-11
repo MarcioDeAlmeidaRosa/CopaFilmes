@@ -85,6 +85,10 @@ html {
     padding-right: 0 !important;
 }
 
+.remove_padding_esquerdo {
+    padding-left: 0 !important;
+}
+
 
 /* final componentes comandos */
 
