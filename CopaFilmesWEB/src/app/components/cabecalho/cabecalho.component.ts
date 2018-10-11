@@ -9,14 +9,8 @@ import { NgModule } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
-  // @Input()
-  // private _TextoCampoStatus: string;
-  // public get TextoCampoStatus(): string {
-  //   return this._TextoCampoStatus;
-  // }
-  // public set TextoCampoStatus(value: string) {
-  //   this._TextoCampoStatus = value;
-  // }
+  @Input() TextoCampoStatus: string;
+  @Input() TextoCampoOrientacao: string;
 
   constructor() { }
 
