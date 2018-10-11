@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
-  ListasComponent ,
   FilmeDisputaComponent,
   FilmeVencedorComponent,
 } from '.';
@@ -15,12 +14,10 @@ import {
     ReactiveFormsModule,
   ],
   declarations: [
-    ListasComponent,
     FilmeDisputaComponent,
     FilmeVencedorComponent,
   ],
   exports: [
-    ListasComponent,
     FilmeDisputaComponent,
     FilmeVencedorComponent,
   ]

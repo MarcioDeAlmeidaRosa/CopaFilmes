@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ClickEventHelper } from 'src/app/helpers/click-event.helper';
-import { FilmesService } from 'src/app/services';
+import { FilmesAPIService } from 'src/app/services';
 import { FilmeModel } from 'src/app/models';
 
 
@@ -15,12 +15,12 @@ export class PartidaComponent implements OnInit {
 
   constructor(
     private clickEventHelper: ClickEventHelper,
-    private serviceFilme: FilmesService,
+    private serviceAPIFilme: FilmesAPIService,
   ) { }
 
   consultaFilmes() {
     // TODO:COLOCAR TRATAMENTO DE AGUARDE
-    this.serviceFilme.listarFilmes().subscribe((data:  FilmeModel[]) => {
+    this.serviceAPIFilme.listarFilmes().subscribe((data:  FilmeModel[]) => {
       this.listaFilmesSelecao = data;
     });
   }

@@ -1,47 +1,9 @@
 <div class="row main_components">
     <div class="col-md-12 col-sd-12">
-
-            <!-- https://stackoverflow.com/questions/43093786/using-angular2-ngfor-index -->
-       
-        <span *ngFor="let filme of ListaFilmes ; let idx = index">
-            <!-- {{i}}/{{users.id}}. {{user}} <span *ngIf="isFirst">default</span> -->
-            <!-- <div class="col-md-3 col-sd-3 filme_disputa">
-                <p>{{user.titulo}}</p>
-        
-            </div> -->
-            <!-- {{idx}} -->
-
-            <div class="row" *ngIf="idx % 4 === 0">
-
-                <div class="col-md-3 col-sd-3 filme_disputa">
-                    <input type="checkbox" id="filme_{{filme.id}}"> <label for="filme_{{filme.id}}"> - {{filme.titulo}} <br> {{filme.ano}} </label>
-                </div>
-                <!-- <div class="col-md-3 col-sd-3  filme_disputa">
-                    <input type="checkbox" id="filme2"> <label for="filme1"> - Filme 2 <br> 2018</label>
-                </div>
-                <div class="col-md-3 col-sd-3  filme_disputa">
-                    <input type="checkbox" id="filme3"> <label for="filme1"> - Filme 3 <br> 2018</label>
-                </div>
-                <div class="col-md-3 col-sd-3  filme_disputa">
-                    <input type="checkbox" id="filme4"> <label for="filme1"> Filme 4 <br> 2018</label>
-                </div> -->
+        <div class="row">
+            <div class="col-md-3 col-sd-3 filme_disputa" *ngFor="let filme of ListaFilmes ; let idx = index">
+                <input type="checkbox" id="filme_{{filme.id}}"> <label for="filme_{{filme.id}}"> - {{filme.titulo}} <br> {{filme.ano}} </label>
             </div>
-
-            <span  *ngIf="idx % 4 != 0">
-
-                <div class="col-md-3 col-sd-3 filme_disputa">
-                    <input type="checkbox" id="filme_{{filme.id}}"> <label for="filme_{{filme.id}}"> - {{filme.titulo}} <br> {{filme.ano}} </label>
-                </div>
-            </span>
-                
-        </span>
-           
-
-
-        
-        
-        
-        
+        </div>
     </div>
 </div>
-

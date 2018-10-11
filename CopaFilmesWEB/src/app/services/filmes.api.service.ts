@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Constants } from '../app.constants';
 
 @Injectable()
-export class FilmesService {
+export class FilmesAPIService {
   private default_url = Constants.DEFAULT_URL;
   private urlListaFilme = `${this.default_url}/api/Filme`;
   private urlIniciarPartida = `${this.default_url}/api/Partida`;
