@@ -15,6 +15,9 @@ namespace CopaFilmesAPI
         /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
+            //Habilita CORS
+            config.EnableCors();
+
             // Web API configuration and services
             //setando não retorno de propriedade null
             config.Formatters.JsonFormatter.SerializerSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
