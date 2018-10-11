@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { P404Component } from '.';
 
-const PartidaRoutes: Routes = [
+const P404Routes: Routes = [
   {
     path: '**' , 
     component: P404Component
@@ -11,7 +11,7 @@ const PartidaRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(PartidaRoutes)],
+  imports: [RouterModule.forChild(P404Routes)],
   exports: [RouterModule]
 })
 export class P404RoutingModule {}

@@ -17,8 +17,9 @@ export class ComandoComponent implements OnInit {
   ) { }
 
   get TotalSelecionado() {
-    //  return this.ListaFilmeVerificacao.filter(filmes => filmes.selecionado === true );
-    return 1;
+    if(this.ListaFilmeVerificacao)
+      return this.ListaFilmeVerificacao.filter(l=> l.selecionado).length;
+    return 0;
   }
 
   onClick() {

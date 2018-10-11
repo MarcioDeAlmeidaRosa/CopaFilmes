@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing';
 
+
 import {
   CurrentUrlService,
   FilmesService
@@ -22,7 +23,6 @@ import { ClickEventHelper } from './helpers/click-event.helper';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
