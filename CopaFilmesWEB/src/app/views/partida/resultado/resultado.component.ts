@@ -1,15 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { FilmeVencedorDataService, CurrentUrlService } from 'src/app/services';
 
 @Component({
   selector: 'app-resultado',
   templateUrl: './resultado.component.html',
   styleUrls: ['./resultado.component.css']
 })
-export class ResultadoComponent implements OnInit {
+export class ResultadoComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(
+    private filmeVencedorDataService: FilmeVencedorDataService,
+    private currentUrlService: CurrentUrlService,
+  ) {
+    if (this.filmeVencedorDataService.FimleVencedor.length == 0) {
+      this.NovoCampeonato();
+      return;
+    }
+  }
+
+  NovoCampeonato() {
+    this.currentUrlService.redirectUrl('/partida');
+  }
 
   ngOnInit() {
+
+  }
+
+  ngOnDestroy() {
+    
   }
 
 }

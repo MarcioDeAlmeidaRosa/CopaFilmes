@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 
-import { FilmeModel } from 'src/app/models';
 import { FilmeVencedorDataService } from 'src/app/services/filmes.vencedor.data.service.';
 
 @Component({
@@ -9,11 +8,13 @@ import { FilmeVencedorDataService } from 'src/app/services/filmes.vencedor.data.
   styleUrls: ['./filme-vencedor.component.css']
 })
 export class FilmeVencedorComponent implements OnInit, OnDestroy {
-  private listaFilmes: FilmeModel[] = [];
+  @Output() botaoDisparado: EventEmitter<any> = new EventEmitter();
   constructor(
     private filmeVencedorDataService: FilmeVencedorDataService,
-  ) {
-    this.listaFilmes = this.filmeVencedorDataService.FimleVencedor;
+  ) { }
+
+  onClick() {
+    this.botaoDisparado.emit();
   }
 
   ngOnInit() {

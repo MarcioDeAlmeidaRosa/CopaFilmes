@@ -11,7 +11,6 @@ import {
   FilmeDataService,
   FilmeVencedorDataService,
 } from './services';
-import { ClickEventHelper } from './helpers/click-event.helper';
 
 @NgModule({
   declarations: [
@@ -22,11 +21,10 @@ import { ClickEventHelper } from './helpers/click-event.helper';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     HttpClient,
-    ClickEventHelper,
     CurrentUrlService,
     FilmesAPIService,
     FilmeDataService,

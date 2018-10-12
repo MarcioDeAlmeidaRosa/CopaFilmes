@@ -1,12 +1,17 @@
 <div class="row main_components">
     <div class="col-md-12 col-sd-12">
-        <div class="row filme_campeao" *ngFor="let filme of listaFilmes; let idx = index">
+        <div class="row filme_campeao" *ngFor="let filme of filmeVencedorDataService.FimleVencedor; let idx = index">
             <div class="col-md-1 col-sd-1 filme_campeao_posicao">
-                {{idx + 1}}º
+                <p class="centraliza_numero">{{idx + 1}}º</p>
             </div>
             <div class="col-md-11 col-sd-11 filme_campeao_titulo">
-                {{filme.titulo}} - {{filme.ano}}
+                <p class="centraliza">{{filme.titulo}} - {{filme.ano}}</p>
             </div>
         </div>
+    </div>
+</div>
+<div class="row main_components">
+    <div class="col-md-12 col-sd-12 remove_padding_direito">
+        <button class="botao_selecao" (click)="onClick()">Novo campeonato</button>
     </div>
 </div>

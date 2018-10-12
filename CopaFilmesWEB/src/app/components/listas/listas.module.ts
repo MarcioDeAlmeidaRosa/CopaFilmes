@@ -6,12 +6,14 @@ import {
   FilmeDisputaComponent,
   FilmeVencedorComponent,
 } from '.';
+import { ComandosModule } from '../comandos/comandos.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    ComandosModule,
   ],
   declarations: [
     FilmeDisputaComponent,

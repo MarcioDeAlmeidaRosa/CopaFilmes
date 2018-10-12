@@ -70,7 +70,7 @@ html {
     font-size: 120%;
 }
 
-.gerar_campeonato {
+.botao_selecao {
     float: right;
     text-transform: uppercase;
     font-weight: bold;
@@ -106,11 +106,16 @@ html {
 
 .centraliza_horizontal {
     top: 25%;
-    /* height: 75%; */
     font-size: 70%;
     position: relative;
     width: 100%;
     height: 100%;
+}
+
+.estilo_imput,
+.seleciona,
+.gerar_campeonato {
+    cursor: pointer;
 }
 
 
@@ -128,14 +133,23 @@ html {
     background: #6E6E6E;
     color: #FFFFFF;
     font-size: 300%;
-    display: flex;
-    align-items: center;
+    text-align: center;
 }
 
 .filme_campeao_titulo {
     background: #FFFFFF;
     color: #000000;
     font-size: 200%;
+}
+
+.centraliza_numero {
+    position: relative;
+    top: 16%;
+}
+
+.centraliza {
+    position: relative;
+    top: 25%;
 }
 
 

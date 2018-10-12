@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { ClickEventHelper } from 'src/app/helpers/click-event.helper';
 import { FilmeDataService } from 'src/app/services';
 import { FilmeModel } from 'src/app/models';
 
@@ -10,11 +9,13 @@ import { FilmeModel } from 'src/app/models';
   templateUrl: './comando.component.html',
   styleUrls: ['./comando.component.css']
 })
-export class ComandoComponent implements OnInit, OnDestroy  {
+export class ComandoComponent implements OnInit, OnDestroy {
   private listaFilmes: FilmeModel[] = [];
   private subscription: Subscription;
+
+  @Output() botaoDisparado: EventEmitter<any> = new EventEmitter();
+  
   constructor(
-    private clickEventHelper: ClickEventHelper, // TODO: RETIRAR DEPOIS
     private filmeDataService: FilmeDataService,
   ) {
     this.subscription = this.filmeDataService.ListaFilme().subscribe(listaFilmes => { this.listaFilmes = listaFilmes; });
@@ -25,7 +26,7 @@ export class ComandoComponent implements OnInit, OnDestroy  {
   }
 
   onClick() {
-    this.clickEventHelper.callEvent('clicked!');
+    this.botaoDisparado.emit();
   }
 
   ngOnInit() {

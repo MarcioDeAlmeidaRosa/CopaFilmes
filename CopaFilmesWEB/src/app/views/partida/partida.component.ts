@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { ClickEventHelper } from 'src/app/helpers/click-event.helper';
 import { FilmeModel } from 'src/app/models';
 import { Constants } from '../../app.constants';
 import {
@@ -21,7 +20,6 @@ export class PartidaComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
 
   constructor(
-    private clickEventHelper: ClickEventHelper,
     private filmesAPIService: FilmesAPIService,
     private filmeDataService: FilmeDataService,
     private currentUrlService: CurrentUrlService,
@@ -52,7 +50,6 @@ export class PartidaComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.clickEventHelper.events$.forEach(event => this.gerarMeuCampeonato());
     this.consultaFilmes();
   }
 
