@@ -45,12 +45,12 @@ Esta solução é dividida em componentes onde cada uma tem sua responsabilidade
 ### Executar aplicações ### 
 
 - **WEB**
-  - Verificar os parâmetros da constante app.constants.ts, nele tem o endereço da API para recuperar os dados e a configuração de quantidade de time necessário para a competição, lembrando que a API tem uma trava para não aceitar número impar de time, então pode ser atribuído qualquer valor, exceto impar.
-  - Gerar distribuição (desenvolvimento/produção), acesar o repositório web e executar o comando  -> (ng build) caso tenha dúvida, acessar documentação https://github.com/angular/angular-cli/wiki/build
+  - Verificar os parâmetros da constante app.constants.ts, nele tem o endereço da API para recuperar os dados e a configuração de quantidade de time necessário para a competição, lembrando que a API tem uma trava para não aceitar número ímpar de time, então pode ser atribuído qualquer valor, exceto ímpar.
+  - Gerar distribuição (desenvolvimento/produção), acessar o repositório web e executar o comando  -> (ng build) caso tenha dúvida, acessar documentação https://github.com/angular/angular-cli/wiki/build
   - Testar distribuição(via browsersync documentação de uso/instalação https://browsersync.io/) após gerar a distribuição, será gerada uma pasta dist/CopaFilmesWEB, acessar a pasta pelo prompt e executar o comando (browser-sync --server) para iniciar a aplicação (http://localhost:3000)
   
 - **API**
-  - Necessário ter o IIS na maquina onde será instalada a WEB API
+  - Necessário ter o IIS na máquina onde será instalada a WEB API
   - Acessar a locução do projeto .NET e selecionar o projeto (CopaFilmesAPI), clicar com botão direito do mouse e selecionar a opção publicar.
   - Acessar o IIS e criar um novo site dando um nome para ele e atribuindo uma porta que não esteja sendo usada e apontar o caminho para a pasta da sua publicação executada no passo anterior.
   - Este endereço gerado deverá ser atualizado no arquivo app.constants.ts do projeto WEB para que este acesse a API.
