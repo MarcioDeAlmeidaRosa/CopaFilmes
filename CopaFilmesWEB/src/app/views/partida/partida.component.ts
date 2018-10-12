@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-
 import { Subscription } from 'rxjs';
+
 import { ClickEventHelper } from 'src/app/helpers/click-event.helper';
-import { FilmesAPIService, FilmeDataService } from 'src/app/services';
+import { FilmesAPIService, FilmeDataService, CurrentUrlService } from 'src/app/services';
 import { FilmeModel } from 'src/app/models';
+import { Constants } from '../../app.constants';
+import { FilmeVencedorDataService } from 'src/app/services/filmes.vencedor.data.service.';
 
 
 @Component({
@@ -12,13 +14,18 @@ import { FilmeModel } from 'src/app/models';
   styleUrls: ['./partida.component.css']
 })
 export class PartidaComponent implements OnInit, OnDestroy {
+  private listaFilmes: FilmeModel[] = [];
   private subscription: Subscription;
 
   constructor(
     private clickEventHelper: ClickEventHelper,
     private filmesAPIService: FilmesAPIService,
     private filmeDataService: FilmeDataService,
-  ) { }
+    private currentUrlService: CurrentUrlService,
+    private filmeVencedorDataService: FilmeVencedorDataService,
+  ) {
+    this.subscription = this.filmeDataService.ListaFilme().subscribe(listaFilmes => { this.listaFilmes = listaFilmes; });
+  }
 
   consultaFilmes() {
     // TODO:COLOCAR TRATAMENTO DE AGUARDE
@@ -30,7 +37,16 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   gerarMeuCampeonato() {
     // TODO: BLOQUEAR AÇÃO DO BOTÃO
-    console.log('cliquei no processar');
+    if (! this.listaFilmes.length ) { return; }
+    const selecionados = this.listaFilmes.filter(f => f.selecionado);
+    if (! selecionados.length ) { return; }
+    if (selecionados.length !== Constants.QUANTIDADE_SELECAO_CAMPEONATO) { return; }
+    const ids = selecionados.map(i => i.id, []);
+    console.log(ids);
+    this.filmesAPIService.iniciarPartida(ids).subscribe((data:  FilmeModel[]) => {
+      this.filmeVencedorDataService.FimleVencedor = data;
+      this.currentUrlService.redirectUrl('/partida/resultado');
+    });
   }
 
   ngOnInit() {

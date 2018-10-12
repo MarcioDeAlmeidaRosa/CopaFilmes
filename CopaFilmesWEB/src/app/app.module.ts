@@ -13,6 +13,7 @@ import {
   CurrentUrlService,
   FilmesAPIService,
   FilmeDataService,
+  FilmeVencedorDataService,
 } from './services';
 
 import { ClickEventHelper } from './helpers/click-event.helper';
@@ -34,6 +35,7 @@ import { ClickEventHelper } from './helpers/click-event.helper';
     CurrentUrlService,
     FilmesAPIService,
     FilmeDataService,
+    FilmeVencedorDataService,
   ],
   bootstrap: [AppComponent]
 })

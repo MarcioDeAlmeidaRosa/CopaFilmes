@@ -1,19 +1,11 @@
 <div class="row main_components">
     <div class="col-md-12 col-sd-12">
-        <div class="row filme_campeao">
+        <div class="row filme_campeao" *ngFor="let filme of listaFilmes; let idx = index">
             <div class="col-md-1 col-sd-1 filme_campeao_posicao">
-                1º
+                {{idx + 1}}º
             </div>
             <div class="col-md-11 col-sd-11 filme_campeao_titulo">
-                Filme 1 - 2018
-            </div>
-        </div>
-        <div class="row filme_campeao">
-            <div class="col-md-1 col-sd-1 filme_campeao_posicao">
-                2º
-            </div>
-            <div class="col-md-11 col-sd-11 filme_campeao_titulo">
-                Filme 1 - 2018
+                {{filme.titulo}} - {{filme.ano}}
             </div>
         </div>
     </div>

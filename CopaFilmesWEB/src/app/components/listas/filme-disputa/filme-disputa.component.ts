@@ -22,7 +22,7 @@ export class FilmeDisputaComponent implements OnInit, OnDestroy  {
     return this.listaFilmes;
   }
 
-  mudarSelecionado(filme) {
+  MudarSelecionado(filme) {
     filme.selecionado = !filme.selecionado;
   }
 

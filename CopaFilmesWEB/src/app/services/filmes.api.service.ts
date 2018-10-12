@@ -13,11 +13,10 @@ export class FilmesAPIService {
   ) { }
 
   listarFilmes() {
-    return this.http.get(this.urlListaFilme, {responseType: 'json'});
+    return this.http.get(this.urlListaFilme, { responseType: 'json' });
   }
 
- 
   iniciarPartida(body: string[]) {
-    return this.http.post(this.urlIniciarPartida, body, {responseType: 'json'});
+    return this.http.post(this.urlIniciarPartida, body, { responseType: 'json' });
   }
 }
