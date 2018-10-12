@@ -30,10 +30,7 @@ export class PartidaComponent implements OnInit, OnDestroy {
 
   consultaFilmes() {
     // TODO:COLOCAR TRATAMENTO DE AGUARDE
-    this.filmesAPIService.listarFilmes().subscribe((data: FilmeModel[]) => {
-      data.forEach(i => i.selecionado = false);
-      this.filmeDataService.CarregarFilmes(data);
-    });
+    this.filmesAPIService.listarFilmes().subscribe((data: FilmeModel[]) => this.filmeDataService.CarregarFilmes(data));
   }
 
   gerarMeuCampeonato() {

@@ -1,16 +1,38 @@
-<div class="row main_components">
-    <div class="col-md-12 col-sd-12">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 filme_disputa" *ngFor="let filme of ListaFilmes">
-                <div class="row centraliza_horizontal">
-                    <div class="col-2">
-                        <input class="estilo_imput" [checked]="filme.selecionado" (change)="MudarSelecionado(filme)" type="checkbox" id="filme_{{filme.id}}">
-                    </div>
-                    <div class="col-10">
-                        <label for="filme_{{filme.id}}" class="seleciona"> <b>{{filme.titulo}}</b> <br> {{filme.ano}} </label>
+<div *ngIf="filmes$ | async as filmes; else loading">
+    <ng-container *ngIf="filmes.length; else noItems">
+        <div class="row main_components">
+            <div class="col-md-12 col-sd-12">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 filme_disputa" *ngFor="let filme of filmes">
+                        <div class="row centraliza_horizontal">
+                            <div class="col-2">
+                                <input class="estilo_imput" [checked]="filme.selecionado" (change)="MudarSelecionado(filme)" type="checkbox" id="filme_{{filme.id}}">
+                            </div>
+                            <div class="col-10">
+                                <label for="filme_{{filme.id}}" class="seleciona"> <b>{{filme.titulo}}</b> <br> {{filme.ano}} </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-container>
 </div>
+<ng-container>
+    <ng-template #noItems>
+        <div class="row main_components">
+            <div class="col-md-12 col-sd-12">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Opssss!</strong> Não encontrato filmes para o campeonato.
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</ng-container>
+<ng-template #loading>
+    <div class="row main_components">
+        <div class="col-md-12 col-sd-12">
+            <img src="/assets/gifs/loading_by_deiby_ybied-d48kirx.gif" class="mx-auto d-block" />
+        </div>
+    </div>
+</ng-template>
