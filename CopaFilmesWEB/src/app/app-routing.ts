@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: '' ,
+    path: '',
     children: [
       {
         path: '',
@@ -17,7 +17,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: '**', 
+    path: '**',
     loadChildren: './views/p404/p404.module#P404Module',
   }
 ];

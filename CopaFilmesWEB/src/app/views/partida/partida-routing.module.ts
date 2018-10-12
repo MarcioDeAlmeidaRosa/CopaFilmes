@@ -23,4 +23,4 @@ const PartidaRoutes: Routes = [
   imports: [RouterModule.forChild(PartidaRoutes)],
   exports: [RouterModule]
 })
-export class PartidaRoutingModule {}
+export class PartidaRoutingModule { }

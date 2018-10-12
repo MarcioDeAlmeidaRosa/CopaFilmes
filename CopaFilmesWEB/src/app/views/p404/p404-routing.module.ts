@@ -5,7 +5,7 @@ import { P404Component } from '.';
 
 const P404Routes: Routes = [
   {
-    path: '**' , 
+    path: '**',
     component: P404Component
   }
 ];
@@ -14,4 +14,4 @@ const P404Routes: Routes = [
   imports: [RouterModule.forChild(P404Routes)],
   exports: [RouterModule]
 })
-export class P404RoutingModule {}
+export class P404RoutingModule { }

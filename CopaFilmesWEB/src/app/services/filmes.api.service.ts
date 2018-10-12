@@ -5,8 +5,8 @@ import { Constants } from '../app.constants';
 @Injectable()
 export class FilmesAPIService {
   private default_url = Constants.DEFAULT_URL;
-  private urlListaFilme = `${this.default_url}/api/Filme`;
-  private urlIniciarPartida = `${this.default_url}/api/Partida`;
+  private urlListaFilme = `${this.default_url}/api/filme`;
+  private urlIniciarPartida = `${this.default_url}/api/partida`;
 
   constructor(
     private http: HttpClient

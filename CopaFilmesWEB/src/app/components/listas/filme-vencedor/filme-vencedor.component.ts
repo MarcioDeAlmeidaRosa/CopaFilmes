@@ -8,13 +8,12 @@ import { FilmeVencedorDataService } from 'src/app/services/filmes.vencedor.data.
   templateUrl: './filme-vencedor.component.html',
   styleUrls: ['./filme-vencedor.component.css']
 })
-export class FilmeVencedorComponent implements OnInit , OnDestroy {
+export class FilmeVencedorComponent implements OnInit, OnDestroy {
   private listaFilmes: FilmeModel[] = [];
   constructor(
     private filmeVencedorDataService: FilmeVencedorDataService,
   ) {
     this.listaFilmes = this.filmeVencedorDataService.FimleVencedor;
-    console.log(this.listaFilmes);
   }
 
   ngOnInit() {

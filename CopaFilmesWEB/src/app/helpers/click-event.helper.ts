@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
-
 @Injectable()
 export class ClickEventHelper {
   private _subject = new Subject<any>();
@@ -10,7 +9,7 @@ export class ClickEventHelper {
     this._subject.next(event);
   }
 
-  get events$ () {
+  get events$() {
     return this._subject.asObservable();
   }
 }

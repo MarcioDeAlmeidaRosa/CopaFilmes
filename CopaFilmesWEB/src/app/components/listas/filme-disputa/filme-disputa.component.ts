@@ -9,7 +9,7 @@ import { FilmeModel } from 'src/app/models';
   templateUrl: './filme-disputa.component.html',
   styleUrls: ['./filme-disputa.component.css']
 })
-export class FilmeDisputaComponent implements OnInit, OnDestroy  {
+export class FilmeDisputaComponent implements OnInit, OnDestroy {
   private listaFilmes: FilmeModel[] = [];
   private subscription: Subscription;
   constructor(
