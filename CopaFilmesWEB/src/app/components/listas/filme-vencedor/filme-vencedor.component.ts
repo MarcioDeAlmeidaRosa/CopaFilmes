@@ -10,7 +10,7 @@ import { FilmeVencedorDataService } from 'src/app/services/filmes.vencedor.data.
 export class FilmeVencedorComponent implements OnInit, OnDestroy {
   @Output() botaodisparado: EventEmitter<any> = new EventEmitter();
   constructor(
-    private filmeVencedorDataService: FilmeVencedorDataService,
+    public filmeVencedorDataService: FilmeVencedorDataService,
   ) { }
 
   onClick() {

@@ -18,7 +18,7 @@ import {
 export class PartidaComponent implements OnInit, OnDestroy {
   private listaFilmes: FilmeModel[] = [];
   private subscription: Subscription;
-  private mensagemerroservico: string;
+  public mensagemerroservico: string;
 
   constructor(
     private filmesAPIService: FilmesAPIService,

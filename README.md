@@ -49,7 +49,11 @@ Esta solução é dividida em componentes onde cada uma tem sua responsabilidade
   - Gerar distribuição (desenvolvimento/produção), acesar o repositório web e executar o comando  -> (ng build) caso tenha dúvida, acessar documentação https://github.com/angular/angular-cli/wiki/build
   - Testar distribuição(via browsersync documentação de uso/instalação https://browsersync.io/) após gerar a distribuição, será gerada uma pasta dist/CopaFilmesWEB, acessar a pasta pelo prompt e executar o comando (browser-sync --server) para iniciar a aplicação (http://localhost:3000/partida)
   
-
+- **API**
+  - Necessário ter o IIS na maquina onde será instalada a WEB API
+  - Acessar a locução do projeto .NET e selecionar o projeto (CopaFilmesAPI), clicar com botão direito do mouse e selecionar a opção publicar.
+  - Acessar o IIS e criar um novo site dando um nome para ele e atribuindo uma porta que não esteja sendo usada e apontar o caminho para a pasta da sua publicação executada no passo anterior.
+  - Este endereço gerado deverá ser atualizado no arquivo app.constants.ts do projeto WEB para que este acesse a API.
   
 ### Considerações finais ### 
 

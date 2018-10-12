@@ -10,7 +10,7 @@ import { FilmeModel } from 'src/app/models';
   styleUrls: ['./filme-disputa.component.css']
 })
 export class FilmeDisputaComponent implements OnInit, OnDestroy {
-  private filmes$: Observable<FilmeModel[]>;
+  public filmes$: Observable<FilmeModel[]>;
   private subscription: Subscription;
 
   @Input() mensagemerroservico: string;
