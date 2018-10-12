@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { FilmeDataService } from 'src/app/services';
@@ -13,7 +13,9 @@ export class ComandoComponent implements OnInit, OnDestroy {
   private listaFilmes: FilmeModel[] = [];
   private subscription: Subscription;
 
-  @Output() botaoDisparado: EventEmitter<any> = new EventEmitter();
+  @Output() botaodisparado: EventEmitter<any> = new EventEmitter();
+  @Input() desabilitarbotao: boolean = false;
+  @Input() titulobotao: string;
   
   constructor(
     private filmeDataService: FilmeDataService,
@@ -26,7 +28,7 @@ export class ComandoComponent implements OnInit, OnDestroy {
   }
 
   onClick() {
-    this.botaoDisparado.emit();
+    this.botaodisparado.emit();
   }
 
   ngOnInit() {

@@ -1,3 +1,3 @@
 <app-cabecalho textocampostatus="Fase de Seleção" textocampoorientacao="Selecione 8 filmes que você deseja que entrem na competição e depois pressione o botão Gerar Meu Campeonato para prosseguir."></app-cabecalho>
-<app-comando (botaoDisparado)="gerarmeucampeonato()"></app-comando>
+<app-comando titulobotao="Selecione {{totalnecessarioregistro}} filmes para iniciar o campeonato." (botaodisparado)="gerarmeucampeonato()" [desabilitarbotao]="liberabotao"></app-comando>
 <app-filme-disputa [mensagemerroservico]="mensagemerroservico"></app-filme-disputa>

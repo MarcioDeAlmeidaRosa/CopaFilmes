@@ -8,13 +8,13 @@ import { FilmeVencedorDataService } from 'src/app/services/filmes.vencedor.data.
   styleUrls: ['./filme-vencedor.component.css']
 })
 export class FilmeVencedorComponent implements OnInit, OnDestroy {
-  @Output() botaoDisparado: EventEmitter<any> = new EventEmitter();
+  @Output() botaodisparado: EventEmitter<any> = new EventEmitter();
   constructor(
     private filmeVencedorDataService: FilmeVencedorDataService,
   ) { }
 
   onClick() {
-    this.botaoDisparado.emit();
+    this.botaodisparado.emit();
   }
 
   ngOnInit() {

@@ -3,6 +3,6 @@
         <p class="filmes_selecionados">Selecionados <br/>{{totalselecionado}} de 8 filmes</p>
     </div>
     <div class="col-md-6 remove_padding_direito">
-        <button class="botao_selecao" (click)="onClick()" ng-disabled="totalselecionado === 8">Gerar meu campeonato</button>
+        <button [title]="titulobotao" class="botao_selecao" (click)="onClick()" [disabled]="desabilitarbotao" [ngClass]="{'desabilitado': desabilitarbotao}">Gerar meu campeonato</button> {{habilitabotao}}
     </div>
 </div>

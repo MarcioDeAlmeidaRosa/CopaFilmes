@@ -81,6 +81,10 @@ html {
     box-sizing: border-box;
 }
 
+.desabilitado {
+    opacity: .20;
+}
+
 .remove_padding_direito {
     padding-right: 0 !important;
 }

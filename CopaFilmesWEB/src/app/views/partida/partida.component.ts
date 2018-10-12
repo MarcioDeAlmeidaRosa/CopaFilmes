@@ -38,18 +38,26 @@ export class PartidaComponent implements OnInit, OnDestroy {
       }
     );
   }
+  get totalnecessarioregistro(){
+    return Constants.QUANTIDADE_SELECAO_CAMPEONATO;
+  }
+
+  get liberabotao(){
+    return !(this.listaFilmes.filter(f => f.selecionado).length === this.totalnecessarioregistro);
+  }
 
   gerarmeucampeonato() {
-    // TODO: BLOQUEAR AÇÃO DO BOTÃO
-    if (!this.listaFilmes.length) { return; }
-    const selecionados = this.listaFilmes.filter(f => f.selecionado);
-    if (!selecionados.length) { return; }
-    if (selecionados.length !== Constants.QUANTIDADE_SELECAO_CAMPEONATO) { return; }
-    const ids = selecionados.map(i => i.id, []);
-    this.filmesAPIService.iniciarPartida(ids).subscribe((data: FilmeModel[]) => {
-      this.filmeVencedorDataService.FimleVencedor = data;
-      this.currentUrlService.redirectUrl('/partida/resultado');
-    });
+    if (!this.liberabotao){
+      if (!this.listaFilmes.length) { return; }
+      const selecionados = this.listaFilmes.filter(f => f.selecionado);
+      if (!selecionados.length) { return; }
+      if (selecionados.length !== this.totalnecessarioregistro) { return; }
+      const ids = selecionados.map(i => i.id, []);
+      this.filmesAPIService.iniciarPartida(ids).subscribe((data: FilmeModel[]) => {
+        this.filmeVencedorDataService.FimleVencedor = data;
+        this.currentUrlService.redirectUrl('/partida/resultado');
+      });
+    }
   }
 
   ngOnInit() {
