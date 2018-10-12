@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 import { FilmeModel } from '../models';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class FilmeDataService {
-  private listaFilme: FilmeModel[] = [];
-
-  constructor() { }
-
-  get ListaFilme(): FilmeModel[] {
-    return this.listaFilme;
+  private subject = new Subject<any>();
+  constructor() {
+    this.LimparFilmes();
   }
 
-  set ListaFilme(value: FilmeModel[]) {
-    this.listaFilme = value;
+  LimparFilmes() {
+    this.subject.next();
   }
 
-  get Selecionado(): FilmeModel[] {
-    return this.ListaFilme.filter(f => f.selecionado);
+  ListaFilme(): Observable<FilmeModel[]> {
+    return this.subject.asObservable();
   }
 
+  CarregarFilmes(value: any) {
+    this.subject.next(value);
+  }
 }

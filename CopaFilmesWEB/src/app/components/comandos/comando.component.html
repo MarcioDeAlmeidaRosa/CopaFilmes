@@ -3,6 +3,6 @@
         <p class="filmes_selecionados">Selecionados <br/>{{TotalSelecionado}} de 8 filmes</p>
     </div>
     <div class="col-md-6 remove_padding_direito">
-        <button class="gerar_campeonato" (click)="onClick()" ng-disabled="filmeDataService.Selecionado.length === 8">Gerar meu campeonato</button> {{filmeDataService.Selecionado.length}}
+        <button class="gerar_campeonato" (click)="onClick()" ng-disabled="TotalSelecionado === 8">Gerar meu campeonato</button>
     </div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
+import { Subscription } from 'rxjs';
 import { ClickEventHelper } from 'src/app/helpers/click-event.helper';
 import { FilmesAPIService, FilmeDataService } from 'src/app/services';
 import { FilmeModel } from 'src/app/models';
@@ -10,8 +11,8 @@ import { FilmeModel } from 'src/app/models';
   templateUrl: './partida.component.html',
   styleUrls: ['./partida.component.css']
 })
-export class PartidaComponent implements OnInit {
-  
+export class PartidaComponent implements OnInit, OnDestroy {
+  private subscription: Subscription;
 
   constructor(
     private clickEventHelper: ClickEventHelper,
@@ -22,7 +23,8 @@ export class PartidaComponent implements OnInit {
   consultaFilmes() {
     // TODO:COLOCAR TRATAMENTO DE AGUARDE
     this.filmesAPIService.listarFilmes().subscribe((data:  FilmeModel[]) => {
-      this.filmeDataService.ListaFilme = data;
+      data.forEach(i => i.selecionado = false);
+      this.filmeDataService.CarregarFilmes(data);
     });
   }
 
@@ -34,6 +36,10 @@ export class PartidaComponent implements OnInit {
   ngOnInit() {
     this.clickEventHelper.events$.forEach(event => this.gerarMeuCampeonato());
     this.consultaFilmes();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
