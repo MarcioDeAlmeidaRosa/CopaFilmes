@@ -41,6 +41,15 @@ Esta solução é dividida em componentes onde cada uma tem sua responsabilidade
   - Newtonsoft.Json       -> https://www.nuget.org/packages/Newtonsoft.Json/11.0.2/ReportAbuse
   - FluentValidation      -> https://www.nuget.org/packages/FluentValidation/8.0.100/ReportAbuse
   - RestSharp             -> https://www.nuget.org/packages/RestSharp/106.5.2/ReportAbuse
+
+### Executar aplicações ### 
+
+- **WEB**
+  - Verificar os parâmetros da constante app.constants.ts, nele tem o endereço da API para recuperar os dados e a configuração de quantidade de time necessário para a competição, lembrando que a API tem uma trava para não aceitar número impar de time, então pode ser atribuído qualquer valor, exceto impar.
+  - Gerar distribuição (desenvolvimento/produção), acesar o repositório web e executar o comando  -> (ng build) caso tenha dúvida, acessar documentação https://github.com/angular/angular-cli/wiki/build
+  - Testar distribuição(via browsersync documentação de uso/instalação https://browsersync.io/) após gerar a distribuição, será gerada uma pasta dist/CopaFilmesWEB, acessar a pasta pelo prompt e executar o comando (browser-sync --server) para iniciar a aplicação (http://localhost:3000/partida)
+  
+
   
 ### Considerações finais ### 
 
