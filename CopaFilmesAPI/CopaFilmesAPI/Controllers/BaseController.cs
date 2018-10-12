@@ -11,7 +11,7 @@ namespace CopaFilmesAPI.Controllers
     /// <summary>
     /// Responsável por disponibilizar comportamentos genéricos para as demais classes controle da API
     /// </summary>
-    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-My-Header")]
     public abstract class BaseController : ApiController
     {
         /// <summary>
