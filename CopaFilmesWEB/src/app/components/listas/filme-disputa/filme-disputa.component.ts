@@ -1,6 +1,6 @@
-import {Input, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { FilmeModel } from 'src/app/models';
+import { FilmeDataService } from 'src/app/services';
 
 @Component({
   selector: 'app-filme-disputa',
@@ -8,17 +8,15 @@ import { FilmeModel } from 'src/app/models';
   styleUrls: ['./filme-disputa.component.css']
 })
 export class FilmeDisputaComponent implements OnInit {
-  
-  @Input() ListaFilmeVerificacao: FilmeModel[];
+  constructor(
+    private filmeDataService: FilmeDataService,
+  ) { }
 
-  constructor() { }
-
-  get ListaFilmes(){
-    return this.ListaFilmeVerificacao;
+  get ListaFilmes() {
+    return this.filmeDataService.ListaFilme;
   }
-
+  
   ngOnInit() {
-    
   }
 
 }

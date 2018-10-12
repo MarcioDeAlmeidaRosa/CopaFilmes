@@ -1,7 +1,7 @@
-import { Input, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ClickEventHelper } from 'src/app/helpers/click-event.helper';
-import { FilmeModel } from 'src/app/models';
+import { FilmeDataService } from 'src/app/services';
 
 @Component({
   selector: 'app-comando',
@@ -9,23 +9,19 @@ import { FilmeModel } from 'src/app/models';
   styleUrls: ['./comando.component.css']
 })
 export class ComandoComponent implements OnInit {
-
-  @Input() ListaFilmeVerificacao: FilmeModel[];
-  
   constructor(
-    private clickEventHelper: ClickEventHelper
+    private clickEventHelper: ClickEventHelper,
+    private filmeDataService: FilmeDataService,
   ) { }
 
   get TotalSelecionado() {
-    if(this.ListaFilmeVerificacao)
-      return this.ListaFilmeVerificacao.filter(l=> l.selecionado).length;
-    return 0;
+    return this.filmeDataService.Selecionado.length;
   }
 
   onClick() {
     this.clickEventHelper.callEvent('clicked!');
   }
-  
+
   ngOnInit() {
   }
 

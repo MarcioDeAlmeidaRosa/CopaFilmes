@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ClickEventHelper } from 'src/app/helpers/click-event.helper';
-import { FilmesAPIService } from 'src/app/services';
+import { FilmesAPIService, FilmeDataService } from 'src/app/services';
 import { FilmeModel } from 'src/app/models';
 
 
@@ -11,22 +11,24 @@ import { FilmeModel } from 'src/app/models';
   styleUrls: ['./partida.component.css']
 })
 export class PartidaComponent implements OnInit {
-  public listaFilmesSelecao: FilmeModel[];
+  
 
   constructor(
     private clickEventHelper: ClickEventHelper,
-    private serviceAPIFilme: FilmesAPIService,
+    private filmesAPIService: FilmesAPIService,
+    private filmeDataService: FilmeDataService,
   ) { }
 
   consultaFilmes() {
     // TODO:COLOCAR TRATAMENTO DE AGUARDE
-    this.serviceAPIFilme.listarFilmes().subscribe((data:  FilmeModel[]) => {
-      this.listaFilmesSelecao = data;
+    this.filmesAPIService.listarFilmes().subscribe((data:  FilmeModel[]) => {
+      this.filmeDataService.ListaFilme = data;
     });
   }
 
   gerarMeuCampeonato() {
-
+    // TODO: BLOQUEAR AÇÃO DO BOTÃO
+    console.log('cliquei no processar');
   }
 
   ngOnInit() {

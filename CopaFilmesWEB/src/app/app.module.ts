@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing';
 
 import {
   CurrentUrlService,
-  FilmesAPIService
+  FilmesAPIService,
+  FilmeDataService,
 } from './services';
 
 import { ClickEventHelper } from './helpers/click-event.helper';
@@ -32,6 +33,7 @@ import { ClickEventHelper } from './helpers/click-event.helper';
     ClickEventHelper,
     CurrentUrlService,
     FilmesAPIService,
+    FilmeDataService,
   ],
   bootstrap: [AppComponent]
 })
