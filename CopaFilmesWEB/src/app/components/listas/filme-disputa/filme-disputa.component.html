@@ -21,9 +21,14 @@
 <ng-container>
     <ng-template #noItems>
         <div class="row main_components">
-            <div class="col-md-12 col-sd-12">
+            <div class="col-md-12 col-sd-12 remove_padding_direito remove_padding_esquerdo">
                 <div class="alert alert-danger" role="alert">
-                    <strong>Opssss!</strong> Não encontrato filmes para o campeonato.
+                    <p *ngIf="!mensagemErroDoServico">
+                        <strong>Opssss!</strong> Não encontrato filmes para o campeonato.
+                    </p>
+                    <p *ngIf="mensagemErroDoServico">
+                        {{mensagemErroDoServico}}
+                    </p>
                 </div>
             </div>
         </div>

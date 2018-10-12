@@ -18,6 +18,7 @@ import {
 export class PartidaComponent implements OnInit, OnDestroy {
   private listaFilmes: FilmeModel[] = [];
   private subscription: Subscription;
+  private mensagemErroServico: string;
 
   constructor(
     private filmesAPIService: FilmesAPIService,
@@ -29,8 +30,14 @@ export class PartidaComponent implements OnInit, OnDestroy {
   }
 
   consultaFilmes() {
-    // TODO:COLOCAR TRATAMENTO DE AGUARDE
-    this.filmesAPIService.listarFilmes().subscribe((data: FilmeModel[]) => this.filmeDataService.CarregarFilmes(data));
+    this.filmesAPIService.listarFilmes().subscribe(
+      (data: FilmeModel[]) => this.filmeDataService.CarregarFilmes(data),
+      (err) => {
+        this.filmeDataService.CarregarFilmes([]);
+        this.mensagemErroServico = err.error.message;
+        console.log('OLHA VOCÊ -> ', err.error.message)
+      }
+    );
   }
 
   gerarMeuCampeonato() {
