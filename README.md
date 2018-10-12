@@ -31,7 +31,17 @@ Esta solução é dividida em componentes onde cada uma tem sua responsabilidade
  
 ### Instalações necessárias ### 
 
+- **WEB**
+  - NodeJS        -> https://nodejs.org/en/download/
+  - Angular CLI   -> https://cli.angular.io/
+  - Webpack       -> https://webpack.js.org/
 
+- **API**
+  - Microsoft.AspNet.Cors -> https://www.nuget.org/packages/Microsoft.AspNet.Cors/5.2.6/ReportAbuse
+  - Newtonsoft.Json       -> https://www.nuget.org/packages/Newtonsoft.Json/11.0.2/ReportAbuse
+  - FluentValidation      -> https://www.nuget.org/packages/FluentValidation/8.0.100/ReportAbuse
+  - RestSharp             -> https://www.nuget.org/packages/RestSharp/106.5.2/ReportAbuse
+  
 ### Considerações finais ### 
 
 Caso tenha interesse em ajudar no desenvolvendo novas funcionalidades, é só clonar o repositório do código fonte:
