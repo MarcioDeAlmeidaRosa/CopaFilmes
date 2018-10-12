@@ -21,7 +21,7 @@ export class ComandoComponent implements OnInit, OnDestroy {
     this.subscription = this.filmeDataService.ListaFilme().subscribe(listaFilmes => { this.listaFilmes = listaFilmes; });
   }
 
-  get TotalSelecionado() {
+  get totalselecionado() {
     return this.listaFilmes.filter(f => f.selecionado).length;
   }
 

@@ -14,12 +14,12 @@ export class ResultadoComponent implements OnInit, OnDestroy {
     private currentUrlService: CurrentUrlService,
   ) {
     if (this.filmeVencedorDataService.FimleVencedor.length == 0) {
-      this.NovoCampeonato();
+      this.novocampeonato();
       return;
     }
   }
 
-  NovoCampeonato() {
+  novocampeonato() {
     this.currentUrlService.redirectUrl('/partida');
   }
 

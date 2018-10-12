@@ -13,7 +13,7 @@ export class FilmeDisputaComponent implements OnInit, OnDestroy {
   private filmes$: Observable<FilmeModel[]>;
   private subscription: Subscription;
 
-  @Input() mensagemErroServico: string;
+  @Input() mensagemerroservico: string;
 
   constructor(
     private filmeDataService: FilmeDataService,
@@ -22,11 +22,11 @@ export class FilmeDisputaComponent implements OnInit, OnDestroy {
     this.subscription = this.filmes$.subscribe();
   }
 
-  get mensagemErroDoServico(){
-    return this.mensagemErroServico;
+  get mensagemerrodoservico(){
+    return this.mensagemerroservico;
   }
 
-  MudarSelecionado(filme) {
+  mudarSelecionado(filme) {
     filme.selecionado = !filme.selecionado;
   }
 

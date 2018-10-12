@@ -18,7 +18,7 @@ import {
 export class PartidaComponent implements OnInit, OnDestroy {
   private listaFilmes: FilmeModel[] = [];
   private subscription: Subscription;
-  private mensagemErroServico: string;
+  private mensagemerroservico: string;
 
   constructor(
     private filmesAPIService: FilmesAPIService,
@@ -34,13 +34,12 @@ export class PartidaComponent implements OnInit, OnDestroy {
       (data: FilmeModel[]) => this.filmeDataService.CarregarFilmes(data),
       (err) => {
         this.filmeDataService.CarregarFilmes([]);
-        this.mensagemErroServico = err.error.message;
-        console.log('OLHA VOCÊ -> ', err.error.message)
+        this.mensagemerroservico = err.error.message;
       }
     );
   }
 
-  gerarMeuCampeonato() {
+  gerarmeucampeonato() {
     // TODO: BLOQUEAR AÇÃO DO BOTÃO
     if (!this.listaFilmes.length) { return; }
     const selecionados = this.listaFilmes.filter(f => f.selecionado);

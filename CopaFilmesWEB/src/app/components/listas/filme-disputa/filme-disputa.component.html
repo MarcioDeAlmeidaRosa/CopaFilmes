@@ -6,7 +6,7 @@
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 filme_disputa" *ngFor="let filme of filmes">
                         <div class="row centraliza_horizontal">
                             <div class="col-2">
-                                <input class="estilo_imput" [checked]="filme.selecionado" (change)="MudarSelecionado(filme)" type="checkbox" id="filme_{{filme.id}}">
+                                <input class="estilo_imput" [checked]="filme.selecionado" (change)="mudarSelecionado(filme)" type="checkbox" id="filme_{{filme.id}}">
                             </div>
                             <div class="col-10">
                                 <label for="filme_{{filme.id}}" class="seleciona"> <b>{{filme.titulo}}</b> <br> {{filme.ano}} </label>
@@ -23,11 +23,11 @@
         <div class="row main_components">
             <div class="col-md-12 col-sd-12 remove_padding_direito remove_padding_esquerdo">
                 <div class="alert alert-danger" role="alert">
-                    <p *ngIf="!mensagemErroDoServico">
+                    <p *ngIf="!mensagemerrodoservico">
                         <strong>Opssss!</strong> Não encontrato filmes para o campeonato.
                     </p>
-                    <p *ngIf="mensagemErroDoServico">
-                        {{mensagemErroDoServico}}
+                    <p *ngIf="mensagemerrodoservico">
+                        {{mensagemerrodoservico}}
                     </p>
                 </div>
             </div>

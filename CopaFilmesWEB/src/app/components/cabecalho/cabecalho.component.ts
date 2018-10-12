@@ -7,8 +7,8 @@ import { Input, Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
-  @Input() TextoCampoStatus: string;
-  @Input() TextoCampoOrientacao: string;
+  @Input() textocampostatus: string;
+  @Input() textocampoorientacao: string;
 
   constructor() { }
 
