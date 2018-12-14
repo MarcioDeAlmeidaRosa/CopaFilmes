@@ -27,6 +27,7 @@ namespace CopaFilmesAPI.Core.Exceptions
         /// <param name="mensagem">Mensagem de erro</param>
         public CopaFilmesAPIValidationException(string mensagem) : base(mensagem)
         {
+            _erros = new List<string>() { mensagem };
         }
 
         /// <summary>

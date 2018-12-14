@@ -57,7 +57,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Exceptions\CopaFilmesAPIExceptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +67,9 @@
       <Project>{6143AEDB-5048-4020-B685-4B80228C474E}</Project>
       <Name>CopaFilmesAPI.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

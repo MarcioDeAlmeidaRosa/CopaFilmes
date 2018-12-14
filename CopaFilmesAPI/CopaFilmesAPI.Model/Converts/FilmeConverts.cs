@@ -20,9 +20,9 @@ namespace CopaFilmesAPI.Model.Converts
         /// <returns>Listas de chaves para iniciar o campeonato</returns>
         public static IEnumerable<Filme>[] MontarChaveamentoInicial(this IEnumerable<Filme> filmes)
         {
-            if (filmes == null) throw new ArgumentNullException("Lista de filme não informada.", nameof(filmes));
-            if (filmes.Count() == 0) throw new NotFoundException("Não localizado filme para iniciar a chave.");
-            if ((filmes.Count() % 2) > 0) throw new CopaFilmesAPIValidationException("Não localizado filme para iniciar a chave");
+            if (filmes?.Count() == 0) throw new NotFoundException("Não localizado filme para iniciar a chave.");
+            if ((filmes.Count() % 2) > 0) throw new CopaFilmesAPIValidationException("Não permitido quantidade ímpar para iniciar o campeonato.");
+            if (filmes.Count() == 2) throw new CopaFilmesAPIValidationException("Não selecionado quantidade mínima de time para iniciar o campeonato.");
             var _filmes = filmes.Select(i => i).OrderBy(f => f.Titulo).ToList();
             return _filmes.MontarChaveamento();
         }

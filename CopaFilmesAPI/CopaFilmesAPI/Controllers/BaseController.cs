@@ -2,9 +2,10 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Newtonsoft.Json;
+using System.Web.Http.Cors;
 using System.Collections.Generic;
 using CopaFilmesAPI.Core.Exceptions;
-using System.Web.Http.Cors;
 
 namespace CopaFilmesAPI.Controllers
 {
@@ -22,14 +23,14 @@ namespace CopaFilmesAPI.Controllers
             {
                 typeof(NotFoundException), exception => new
                 {
-                    Errors = new[] {((NotFoundException)exception).Message},
+                    Erros = new[] {((NotFoundException)exception).Message},
                     HttpStatusCode = HttpStatusCode.NotFound
                 }
             },
             {
                 typeof(CopaFilmesAPIValidationException), exception => new
                 {
-                    ((CopaFilmesAPIException)exception).Erros,
+                    ((CopaFilmesAPIValidationException)exception).Erros,
                     HttpStatusCode = HttpStatusCode.BadRequest
                 }
             },
@@ -52,7 +53,7 @@ namespace CopaFilmesAPI.Controllers
             var typeException = ex.GetType();
             if (!_mappedException.ContainsKey(typeException)) return Request.CreateResponse(HttpStatusCode.InternalServerError, new HttpError(ex.Message));
             var mappedException = _mappedException[typeException](ex);
-            return Request.CreateResponse((HttpStatusCode)mappedException.HttpStatusCode, new HttpError(mappedException.Errors));
+            return Request.CreateErrorResponse((HttpStatusCode)mappedException.HttpStatusCode, new HttpError(JsonConvert.SerializeObject(mappedException.Erros)));
         }
     }
 }

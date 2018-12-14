@@ -45,9 +45,6 @@ namespace CopaFilmesAPI.Actions.Tests
             Assert.AreEqual(campeoes.ToList()[1].Nota, 8.5, 0.0001);
         }
 
-
-
-
         /// <summary>
         /// Verificar acesso a posição que não existe do array
         /// </summary>
@@ -93,6 +90,18 @@ namespace CopaFilmesAPI.Actions.Tests
         {
             var action = new PartidaAction();
             var campeoes = await action.ProcessaCampeonato(new string[1] { "tt3606756" });
+            var nota = campeoes.ToList()[3].Nota;
+        }
+
+        /// <summary>
+        /// Verificar execução com quantidade mínima não atingida de filme
+        /// </summary>
+        [TestMethod()]
+        [ExpectedException(typeof(CopaFilmesAPIValidationException))]
+        public async Task VerificaMontarChaveamentoInicialComDoisFilmesCopaFilmesAPIValidationException()
+        {
+            var action = new PartidaAction();
+            var campeoes = await action.ProcessaCampeonato(new string[2] { "tt3606756", "tt4881806" });
             var nota = campeoes.ToList()[3].Nota;
         }
     }
